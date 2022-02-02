@@ -6,16 +6,15 @@ mongoose
     useUnifiedTopology: true,
     useNewUrlParser: true,
   })
-  .then(()=>{
-   console.log('Database connected')
+  .then(() => {
+    console.log("Database connected");
   })
   .catch((err) => {
     console.log(err);
   });
 
+let userSchema = mongoose.Schema({
+  googleId: String,
+});
 
-  let userSchema=mongoose.Schema({
-    googleId:String
-  }) 
-
-module.exports= mongoose.model('user',userSchema)
+module.exports = mongoose.model("User", userSchema);
